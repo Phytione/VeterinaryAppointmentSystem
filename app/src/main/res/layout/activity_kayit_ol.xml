@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KayitOl"
+    android:orientation="vertical"
+
+    >
+
+    <EditText
+        android:id="@+id/edtAdsoyad"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="85dp"
+        android:drawablePadding="12dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:paddingLeft="2dp"
+        android:hint="Adınız Soyadınız"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtEpostaP"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_email"
+        android:paddingLeft="3dp"
+        android:layout_marginLeft="10dp"
+        android:drawablePadding="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:hint="E-postanız"
+        android:inputType="textEmailAddress" />
+
+
+    <EditText
+        android:id="@+id/edtSifre"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="12dp"
+        android:hint="Şifreniz"
+        android:inputType="textPassword"
+        android:paddingLeft="2dp" />
+
+
+    <Button
+
+        android:id="@+id/btnKayit"
+        android:layout_width="200dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="kayit"
+        android:layout_gravity="center"
+        android:shadowColor="#5454FF"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="10"
+        android:text="KAYIT OL"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/hesapGiris"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="hesapGiris"
+        android:text="Hesabınız var mı? Tıklayın"
+        android:textColor="@color/link"
+        android:textSize="18dp" />
+
+
+</LinearLayout>

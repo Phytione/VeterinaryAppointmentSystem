@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/newAnimalIcon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/patix"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <EditText
+        android:id="@+id/newAnimal_isim"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+        android:paddingLeft="1dp"
+        android:drawablePadding="12dp"
+        android:hint="Evcil hayvanınızın ismini giriniz"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newAnimalIcon"
+        app:layout_editor_absoluteX="-28dp" />
+
+    <EditText
+        android:id="@+id/newAnimal_tur"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:foregroundGravity="center"
+        android:background="@drawable/custom_input"
+        android:paddingLeft="2dp"
+        android:drawablePadding="12dp"
+        android:hint="Evcil hayvanınızın türünü giriniz(Örn:Kedi)"
+        android:textAlignment="center"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newAnimal_isim"
+        app:layout_editor_absoluteX="-28dp" />
+
+    <EditText
+        android:id="@+id/newAnimal_yas"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+        android:paddingLeft="2dp"
+        android:drawablePadding="12dp"
+        android:hint="Evcil hayvanınızın yaşını giriniz"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newAnimal_tur"
+        app:layout_editor_absoluteX="-28dp" />
+
+    <EditText
+        android:id="@+id/newAnimal_sikayet"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/custom_input"
+        android:paddingLeft="2dp"
+        android:drawablePadding="12dp"
+        android:hint="Şikayetinizi kısa bir şekilde anlatınız"
+        android:textAlignment="center"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newAnimal_yas"
+        app:layout_editor_absoluteX="-28dp" />
+
+    <Button
+        android:id="@+id/newAnimal_save"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="saveAnimal"
+        android:text="Kaydet"
+        android:background="@drawable/buttonshape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newAnimal_sikayet"
+        app:layout_constraintVertical_bias="0.243" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

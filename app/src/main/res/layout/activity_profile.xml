@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:fadeScrollbars="false"
+    android:isScrollContainer="false"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawHorizontalTrack="false"
+    android:scrollbarAlwaysDrawVerticalTrack="false"
+    android:scrollbarSize="4dp"
+    tools:context=".Profile">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@drawable/face"
+
+
+        />
+
+    <TextView
+        android:id="@+id/txtproAdSoyad"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="50dp"
+        android:text="Adınız Soyadınız:"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/edtAdSoyadP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+
+        android:enabled="false" />
+
+    <TextView
+        android:id="@+id/txtproEposta"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="60dp"
+        android:text="E-posta adresiniz:"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/edtEpostaP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+
+        android:enabled="false" />
+
+   <!-- <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Mevcut Şifre"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/edtMevcutPassP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:enabled="false" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Yeni Şifre"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/edtNewPassP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:enabled="false" />
+
+
+    <Button
+        android:id="@+id/buttonProfile"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="125dp"
+        android:onClick="duzenle"
+        android:text="DUZENLE" />-->
+
+    <Button
+        android:id="@+id/cikisYap"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+
+        android:layout_marginTop="50dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="cikisYap"
+        android:text="ÇIKIŞ YAP" />
+
+
+</LinearLayout>

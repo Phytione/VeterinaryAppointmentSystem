@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawHorizontalTrack="false"
+
+    tools:context=".RandevuActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="60dp"
+        android:text="Evcil Hayvanınızı Seçiniz" />
+
+    <Spinner
+        android:id="@+id/spnEvcilHayvan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:spinnerMode="dropdown"
+        android:prompt="@layout/support_simple_spinner_dropdown_item"
+
+
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="60dp"
+        android:text="Bölüm Seçiniz" />
+
+    <Spinner
+        android:id="@+id/spnBolum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:spinnerMode="dropdown"
+        android:prompt="@layout/support_simple_spinner_dropdown_item"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="60dp"
+        android:text="Hekim Seçiniz" />
+
+    <Spinner
+        android:id="@+id/spnHekim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:prompt="@layout/support_simple_spinner_dropdown_item"
+        android:layout_marginRight="60dp"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="60dp"
+        android:text="Tarih Seçiniz" />
+
+    <Spinner
+        android:id="@+id/spnTarih"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:prompt="@layout/support_simple_spinner_dropdown_item"
+        android:spinnerMode="dropdown" />
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="Onayla"
+        android:layout_gravity="center"
+
+        android:background="@drawable/buttonshape"
+        android:layout_marginTop="30dp"
+        android:onClick="randevuOnay"
+        android:id="@+id/randevuOnay"/>
+</LinearLayout>

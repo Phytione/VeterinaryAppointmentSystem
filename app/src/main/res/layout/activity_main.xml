@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+
+
+
+
+    >
+
+    <ImageView
+        android:id="@+id/imageAnaSayfa"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="30dp"
+        android:foreground="@drawable/indir"
+        android:foregroundGravity="center_vertical" />
+
+
+    <EditText
+        android:id="@+id/edtEpostaP"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:drawablePadding="12dp"
+        android:drawableStart="@drawable/ic_email"
+        android:background="@drawable/custom_input"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="40dp"
+        android:paddingLeft="1dp"
+        android:hint="E-Postanızı Giriniz"
+
+
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/edtSifre"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:drawablePadding="12dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_password"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:hint="Şifrenizi Giriniz"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/txtKayit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        android:onClick="kayitOl"
+        android:text="Kayıt Ol"
+        android:textAlignment="center"
+
+        android:textColor="@color/purple_200"
+        android:textSize="18dp" />
+
+
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/btnGiris"
+        android:background="@drawable/buttonshape"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="girisYap"
+        android:text="Giriş Yap"
+        android:textSize="20dp" />
+    <Button
+        android:id="@+id/hekimGiris"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="hekimGiris"
+        android:text="Veteriner Hekim Girişi"
+        android:textSize="15dp" />
+
+
+</LinearLayout>
