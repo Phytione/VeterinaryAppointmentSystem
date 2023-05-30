@@ -32,7 +32,7 @@ public class ProfileDoctor extends AppCompatActivity {
         Intent intent=new Intent(getApplicationContext(),MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent);
-        this.finish();
+        finishAffinity();
 
     }
 }

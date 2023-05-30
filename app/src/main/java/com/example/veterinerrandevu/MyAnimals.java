@@ -1,29 +1,16 @@
 package com.example.veterinerrandevu;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -50,10 +37,13 @@ public class MyAnimals extends AppCompatActivity {
         setContentView(R.layout.activity_my_animals);
         DB=new dataBase(this);
         String eposta=getIntent().getStringExtra("eposta");
+        String hayvanTuru=DB.getAnimalTur(eposta);
         name=new ArrayList<>();
         sikayet=new ArrayList<>();
         recyclerView=findViewById(R.id.animalsRV);
-        myAdapterAnimal=new MyAdapterAnimal(this,name,sikayet);
+        List<String> animalTurList=DB.getAnimalTurList(eposta);
+
+        myAdapterAnimal=new MyAdapterAnimal(this,name,sikayet,hayvanTuru,eposta,DB,animalTurList);
         recyclerView.setAdapter(myAdapterAnimal);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         veriyiGoster();

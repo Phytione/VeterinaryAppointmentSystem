@@ -132,6 +132,41 @@ public class dataBase extends SQLiteOpenHelper {
         return dataName;
 
     }
+
+    @SuppressLint("Range")
+    public List<String> getHayvanTur(String username) {
+        List<String> animalTurList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT animalTur FROM animals WHERE username=?", new String[]{username});
+
+        if (cursor.moveToFirst()) {
+            do {
+                String animalTur = cursor.getString(cursor.getColumnIndex("animalTur"));
+                animalTurList.add(animalTur);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return animalTurList;
+
+    }
+    public List<String> getAnimalTurList(String email) {
+        List<String> animalTurList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT animalTur FROM animals WHERE username = ?", new String[]{email});
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") String animalTur = cursor.getString(cursor.getColumnIndex("animalTur"));
+                animalTurList.add(animalTur);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return animalTurList;
+    }
+
     @SuppressLint("Range")
     public String getAnimalSikayet(String username){
         String dataName="";
@@ -145,6 +180,21 @@ public class dataBase extends SQLiteOpenHelper {
         return dataName;
 
     }
+    public List<Animal> getAnimalsByEmail(String email) {
+        List<Animal> animals = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT animalTur FROM animals WHERE username = ?", new String[]{email});
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") String animalTur = cursor.getString(cursor.getColumnIndex("animalTur"));
+                Animal animal = new Animal(animalTur);
+                animals.add(animal);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return animals;
+    }
+
 
     @SuppressLint("Range")
     public String getHastaName(String username){

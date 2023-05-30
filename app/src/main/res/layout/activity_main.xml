@@ -17,10 +17,11 @@
         android:id="@+id/imageAnaSayfa"
         android:layout_width="300dp"
         android:layout_height="250dp"
-        android:layout_marginLeft="50dp"
+
+
         android:layout_marginBottom="30dp"
         android:foreground="@drawable/indir"
-        android:foregroundGravity="center_vertical" />
+        android:foregroundGravity="right" />
 
 
     <EditText
@@ -33,10 +34,8 @@
         android:background="@drawable/custom_input"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="40dp"
-        android:paddingLeft="1dp"
+        android:paddingLeft="4dp"
         android:hint="E-Postanızı Giriniz"
-
-
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -50,7 +49,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="50dp"
         android:hint="Şifrenizi Giriniz"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:paddingLeft="4dp"/>
 
     <TextView
         android:id="@+id/txtKayit"

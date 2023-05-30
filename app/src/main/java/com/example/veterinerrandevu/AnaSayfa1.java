@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,6 +27,7 @@ public class AnaSayfa1 extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<String> rAnimalName,rBolum,rDoctor,rTarih;
     MyAdapterRandevu myAdapterRandevu;
+    private long backPressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,22 @@ public class AnaSayfa1 extends AppCompatActivity {
         String tasinanAd=getName.toString();
         txtproAdSoyad.setText(tasinanAd);
 
+
+
+
+
+
+    }
+    @Override
+    public void onBackPressed(){
+
+        if(backPressedTime+2000>System.currentTimeMillis()){
+            super.onBackPressed();
+            return;
+        }else{
+            Toast.makeText(getBaseContext(),"Çıkmak için tekrar basınız",Toast.LENGTH_SHORT).show();
+        }
+        backPressedTime=System.currentTimeMillis();
 
 
 

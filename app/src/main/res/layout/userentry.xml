@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="12dp"
-    app:cardCornerRadius="16dp"
+    app:cardCornerRadius="35dp"
     android:layout_margin="16dp"
     android:id="@+id/cardView"
     android:backgroundTint="@color/animalColor">
@@ -13,18 +13,33 @@
 
 
     <LinearLayout
-        android:layout_height="80dp"
+        android:layout_height="170dp"
         android:layout_width="match_parent"
         android:layout_margin="16dp"
         android:orientation="vertical"
         android:id="@+id/LanimalRandevu">
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/animalEkleImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+
+
+        </LinearLayout>
+
         
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center_vertical">
-            
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,26 +56,26 @@
                 android:textColor="@color/white"
                 style="bold"/>
 
-
-
-
-
-
         </LinearLayout>
+
+
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+
             android:layout_gravity="center_vertical">
 
+
             <TextView
+                style="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Şikayet: "
-                android:textSize="24dp"
                 android:textColor="@color/white"
-                style="bold"/>
+                android:textSize="24dp" />
 
             <TextView
                 android:id="@+id/textsikayet"
@@ -69,10 +84,6 @@
                 android:textSize="24dp"
                 android:textColor="@color/white"
                 style="bold"/>
-
-
-
-
 
 
         </LinearLayout>
