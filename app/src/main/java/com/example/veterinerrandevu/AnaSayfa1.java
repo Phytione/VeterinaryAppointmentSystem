@@ -1,6 +1,7 @@
 package com.example.veterinerrandevu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +29,7 @@ public class AnaSayfa1 extends AppCompatActivity {
     ArrayList<String> rAnimalName,rBolum,rDoctor,rTarih;
     MyAdapterRandevu myAdapterRandevu;
     private long backPressedTime;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +95,7 @@ public class AnaSayfa1 extends AppCompatActivity {
 
     }
     public void refresh(View view){
+
         rAnimalName=new ArrayList<>();
         rBolum=new ArrayList<>();
         rDoctor=new ArrayList<>();

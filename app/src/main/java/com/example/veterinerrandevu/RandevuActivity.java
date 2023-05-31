@@ -5,6 +5,7 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,10 +18,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class RandevuActivity extends AppCompatActivity {
     Button tarihSec,randevuOnay;
@@ -121,7 +125,10 @@ public class RandevuActivity extends AppCompatActivity {
 
     }
 
-    public void randevuOnay(View view){
+
+
+    public void randevuOnay(View view) throws ParseException {
+
         String eposta=getIntent().getStringExtra("eposta");
         DB=new dataBase(this);
         TakvimSpinnerAdaptor takvimSpinnerAdaptor=new TakvimSpinnerAdaptor(getApplicationContext(),30);
@@ -130,10 +137,15 @@ public class RandevuActivity extends AppCompatActivity {
         String rBolum=spnBolum.getSelectedItem().toString();
         String rHekim=spnHekim.getSelectedItem().toString();
         String rTarih=takvimSpinnerAdaptor.getSelectedDateAsString(spnTarih);
+        SimpleDateFormat format=new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
+        Date tarih;
+        tarih=format.parse(rTarih);
+        Log.d("asdas", String.valueOf(tarih));
         Boolean checkRandevu=DB.checkRandevu(rBolum,eposta,rTarih);
         if(checkRandevu==false){
             Boolean insertDataRandevu=DB.insertDataRandevu(eposta,rEvcil,rBolum,rHekim,rTarih);
             if(insertDataRandevu==true){
+
                 Toast.makeText(getApplicationContext(),"Randevunuz başarıyla alınmıştır. Kısa mesaj ile bilgilendirileceksiniz",Toast.LENGTH_SHORT).show();
 
             }else {

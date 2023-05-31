@@ -75,7 +75,6 @@ public class MyAdapterAnimal extends RecyclerView.Adapter<MyAdapterAnimal.MyView
         } else if (hayvanTuru.equalsIgnoreCase("Tavşan")) {
             return R.drawable.rabbit;
         } else {
-
             return R.drawable.defaultxx;
 
         }

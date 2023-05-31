@@ -15,4 +15,6 @@
     <color name="startColor">#FF96BD</color>
     <color name="animalColor">#978B8F</color>
     <color name="randevuColor">#E9E0D2</color>
+    <color name="kirmizi">#B50000</color>
+    <color name="yesil">#36CF13</color>
 </resources>
