@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,9 +25,9 @@ import java.util.Locale;
 public class MyAdapterRandevu extends RecyclerView.Adapter<MyAdapterRandevu.MyViewHolder> {
     private Context context;
     private ArrayList rAnimalName,rBolum,rDoctor,rTarih;
-    private LinearLayout randevuLinearLayout;
-    private CardView cardViewRandevuUser;
-    //private ArrayList<Date> tarih;
+
+
+
 
 
     public MyAdapterRandevu(Context context, ArrayList rAnimalName, ArrayList rBolum,ArrayList rDoctor,ArrayList rTarih) {
@@ -39,6 +38,7 @@ public class MyAdapterRandevu extends RecyclerView.Adapter<MyAdapterRandevu.MyVi
         this.rTarih=rTarih;
 
     }
+
 
     @NonNull
     @Override
@@ -52,6 +52,7 @@ public class MyAdapterRandevu extends RecyclerView.Adapter<MyAdapterRandevu.MyVi
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         int yesilRenk= ContextCompat.getColor(context,R.color.yesil);
         int kirmiziRenk=ContextCompat.getColor(context,R.color.kirmizi);
+        int siyahRenk=ContextCompat.getColor(context,R.color.black);
 
         Collections.sort(rTarih, new Comparator<String>() {
             SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
@@ -89,6 +90,10 @@ public class MyAdapterRandevu extends RecyclerView.Adapter<MyAdapterRandevu.MyVi
            holder.rTarih.setTextColor(Color.WHITE);
        }else{
            holder.randevuLinearLayout.setBackgroundColor(yesilRenk);
+           holder.rAnimalName.setTextColor(siyahRenk);
+           holder.rBolum.setTextColor(siyahRenk);
+           holder.rDoctor.setTextColor(siyahRenk);
+           holder.rTarih.setTextColor(siyahRenk);
 
        }
 
@@ -101,21 +106,19 @@ public class MyAdapterRandevu extends RecyclerView.Adapter<MyAdapterRandevu.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView rAnimalName,rBolum,rDoctor,rTarih;
-        CardView cardViewRandevuUser;
         LinearLayout randevuLinearLayout;
-
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            cardViewRandevuUser=itemView.findViewById(R.id.cardViewRandevuUser);
+
             randevuLinearLayout=itemView.findViewById(R.id.randevuLinearLayout);
             rAnimalName=itemView.findViewById(R.id.textRName);
             rBolum=itemView.findViewById(R.id.textRBolum);
             rDoctor=itemView.findViewById(R.id.textRDoctor);
             rTarih=itemView.findViewById(R.id.textRTarih);
-            cardViewRandevuUser=itemView.findViewById(R.id.cardViewRandevuUser);
-        }
-    }
 
+        }
+            
+    }
 
     private boolean checkIfPastAppointment(String dateString) {
         SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
@@ -139,7 +142,6 @@ public class MyAdapterRandevu extends RecyclerView.Adapter<MyAdapterRandevu.MyVi
         return false;
     }
 
-    
 
 
 

@@ -4,13 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.SimpleCursorAdapter;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class dataBase extends SQLiteOpenHelper {
@@ -133,26 +130,6 @@ public class dataBase extends SQLiteOpenHelper {
 
     }
 
-    @SuppressLint("Range")
-    public List<String> getHayvanTur(String username) {
-        List<String> animalTurList = new ArrayList<>();
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor cursor = db.rawQuery("SELECT animalTur FROM animals WHERE username=?", new String[]{username});
-
-        if (cursor.moveToFirst()) {
-            do {
-                String animalTur = cursor.getString(cursor.getColumnIndex("animalTur"));
-                animalTurList.add(animalTur);
-            } while (cursor.moveToNext());
-        }
-
-        cursor.close();
-        db.close();
-
-        return animalTurList;
-
-    }
     public List<String> getAnimalTurList(String email) {
         List<String> animalTurList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();

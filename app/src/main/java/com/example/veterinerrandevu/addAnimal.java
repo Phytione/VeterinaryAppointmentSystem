@@ -1,7 +1,5 @@
 package com.example.veterinerrandevu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class addAnimal extends AppCompatActivity {
     EditText newAnimal_isim,newAnimal_tur,newAnimal_yas,newAnimal_sikayet;
@@ -48,7 +48,9 @@ public class addAnimal extends AppCompatActivity {
                     String getAnimalTur=DB.getAnimalTur(eposta);
                     String nameData=getAnimalTur.toString();
                     Intent intent=new Intent(getApplicationContext(),MyAnimals.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    finish();
                 }else{
                     Toast.makeText(getApplicationContext(),"Kayıt Başarısız",Toast.LENGTH_SHORT).show();
                 }
