@@ -15,14 +15,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="150dp"
+        android:textColor="@color/black"
         android:layout_marginRight="60dp"
         android:text="Evcil Hayvanınızı Seçiniz" />
 
     <Spinner
 
         android:id="@+id/spnEvcilHayvan"
+        android:background="@drawable/bg_spinner_animals"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:spinnerMode="dropdown"
@@ -34,6 +36,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="60dp"
@@ -41,6 +44,7 @@
 
     <Spinner
         android:id="@+id/spnBolum"
+        android:background="@drawable/bg_spinner_animals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
@@ -52,12 +56,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
+        android:textColor="@color/black"
         android:layout_marginTop="50dp"
         android:layout_marginRight="60dp"
         android:text="Hekim Seçiniz" />
 
     <Spinner
         android:id="@+id/spnHekim"
+        android:background="@drawable/bg_spinner_animals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
@@ -68,6 +74,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="60dp"
@@ -75,20 +82,23 @@
 
     <Spinner
         android:id="@+id/spnTarih"
+        android:background="@drawable/bg_spinner_animals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:prompt="@layout/support_simple_spinner_dropdown_item"
         android:spinnerMode="dropdown" />
+
     <Button
+        android:id="@+id/randevuOnay"
         android:layout_width="120dp"
+
         android:layout_height="50dp"
-        android:text="Onayla"
         android:layout_gravity="center"
 
-        android:background="@drawable/buttonshape"
         android:layout_marginTop="30dp"
+        android:background="@drawable/buttonshape"
         android:onClick="randevuOnay"
-        android:id="@+id/randevuOnay"/>
+        android:text="Onayla" />
 </LinearLayout>

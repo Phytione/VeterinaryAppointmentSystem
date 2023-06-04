@@ -13,9 +13,11 @@
     <color name="mainTheme">#750505</color>
     <color name="centerColor">#B00E34</color>
     <color name="startColor">#FF96BD</color>
-    <color name="animalColor">#ACBCFF</color>
+    <color name="animalColor">#a87883</color>
     <color name="randevuColor">#E9E0D2</color>
     <color name="kirmizi">#B04759</color>
     <color name="yesil">#3EB489</color>
+    <color name="spinnerColor">#FFE5D8</color>
+
 
 </resources>

@@ -1,17 +1,16 @@
 package com.example.veterinerrandevu;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +81,7 @@ public class MyAnimals extends AppCompatActivity {
         String eposta=getIntent().getStringExtra("eposta");
         Cursor cursor=DB.getAnimalData(eposta);
         if (cursor.getCount()==0){
-            Toast.makeText(getApplicationContext(),"Henüz hiç evcil hayvan eklemediniz. Sağ üstteki butonu kullanabilirsiniz",Toast.LENGTH_LONG).show();
+            KayitOl.ToastUtils.showCustomToast("Henüz hiç evcil hayvan eklemediniz. Sağ üstteki menüyü kullanabilirsiniz",1,getApplicationContext());
             return;
         }else {
             while (cursor.moveToNext()){

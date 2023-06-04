@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -77,34 +76,6 @@ public class RandevuActivity extends AppCompatActivity {
         List<String> animalTurList=db.getAnimalTurList(eposta);
         List<String> veri=db.getSpinnerData(eposta);
 
-
-
-        //ArrayAdapter<String> dataAdapter=new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,veri);
-        //spnEvcilHayvan.setAdapter(dataAdapter);
-        //Burdan sonrası yeni
-        /*ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,R.layout.customspinnerlayout,veri){
-            @NonNull
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                View view=super.getView(position,convertView,parent);
-                ImageView imageView = view.findViewById(R.id.imageSpinner);
-                imageView.setImageResource(R.drawable.birdd);
-                return super.getView(position, convertView, parent);
-            }
-            @Override
-            public View getDropDownView(int position, View convertView, ViewGroup parent) {
-                View view = super.getDropDownView(position, convertView, parent);
-                ImageView imageView = view.findViewById(R.id.imageSpinner);
-                // İmajı ayarla
-                imageView.setImageResource(R.drawable.birdd);
-                return view;
-            }
-        };
-
-        spnEvcilHayvan.setAdapter(adapter);*/
-
-
-
         CustomSpinnerAdapter adapter=new CustomSpinnerAdapter(this,veri,animalTurList);
         adapter.setDropDownViewResource(R.layout.customspinnerlayout);
         spnEvcilHayvan.setAdapter(adapter);
@@ -124,31 +95,6 @@ public class RandevuActivity extends AppCompatActivity {
 
             }
         });
-
-        //animalTurList= Collections.singletonList(db.getAnimalTur(eposta));
-        Log.d("asdasda", String.valueOf(animalTurList));
-
-        /*if (hayvanTur.equals("Kedi")) {
-            int resimId = resimMap.get("Kedi");
-            ImageView imageView =findViewById(R.id.imageSpinner);
-            imageView.setImageResource(resimId);
-        } else if (hayvanTur.equals("Köpek")) {
-            int resimId = resimMap.get("Köpek");
-            ImageView imageView = findViewById(R.id.imageSpinner);
-            imageView.setImageResource(resimId);
-        } else if (hayvanTur.equals("Muhabbet Kuşu")) {
-            int resimId = resimMap.get("Muhabbet Kuşu");
-            ImageView imageView = findViewById(R.id.imageSpinner);
-            imageView.setImageResource(resimId);
-        }else if (hayvanTur.equals("Tavşan")) {
-            int resimId = resimMap.get("Tavşan");
-            ImageView imageView = findViewById(R.id.imageSpinner);
-            imageView.setImageResource(resimId);
-        }else{
-            int resimId = R.drawable.defaultxx;
-            ImageView imageView = findViewById(R.id.imageSpinner);
-            imageView.setImageResource(resimId);
-        }*/
 
 
 
@@ -225,64 +171,7 @@ public class RandevuActivity extends AppCompatActivity {
             }
 
             return convertView;
-           /* LayoutInflater inflater = LayoutInflater.from(context);
-            View row = inflater.inflate(R.layout.customspinnerlayout, parent, false);
 
-            TextView textView = row.findViewById(R.id.textView10);
-            ImageView imageView = row.findViewById(R.id.imageSpinner);
-            //textView.setText(getItem(position));
-
-            String currentAnimalTuru= animalTurList.get(position);
-            int resimId;
-            if (currentAnimalTuru.equals("Kedi")) {
-                resimId = R.drawable.catt;
-            } else if (currentAnimalTuru.equals("Köpek")) {
-                resimId = R.drawable.dogg;
-            } else if (currentAnimalTuru.equals("Muhabbet Kuşu")) {
-                resimId = R.drawable.birdd;
-            } else if (currentAnimalTuru.equals("Tavşan")) {
-                resimId = R.drawable.rabbit;
-            } else {
-                resimId = R.drawable.defaultxx;
-            }
-            imageView.setImageResource(resimId);
-            textView.setText(getItem(position));
-
-            return row;*/
-
-
-
-
-            /*if (convertView == null) {
-               convertView = LayoutInflater.from(getContext()).inflate(R.layout.customspinnerlayout, parent, false);
-            }
-            String currentAnimalTuru= animalTurList.get(position);
-
-            ImageView imageView = convertView.findViewById(R.id.imageSpinner);
-           // imageView.setImageResource(resimId);
-
-            TextView textView = convertView.findViewById(R.id.textView10);
-            //textView.setText(getItem(position));
-
-            String hayvanTur =getItem(position);*/
-
-
-           /* if (currentAnimalTuru != null) {
-                textView.setText(getItem(position));
-                if (resimMap.containsKey(currentAnimalTuru)) {
-                    int resimId = resimMap.get(currentAnimalTuru);
-                    if(imageView!=null){
-                        imageView.setImageResource(resimId);
-                    }
-                } else {
-                    int defaultResimId = R.drawable.defaultxx;
-                    if (imageView != null) {
-                        imageView.setImageResource(defaultResimId);
-                    }
-                }
-            }*/
-
-            //return convertView;
         }
 
     }
@@ -337,18 +226,13 @@ public class RandevuActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
-
-
 
     public void randevuOnay(View view) throws ParseException {
 
         String eposta=getIntent().getStringExtra("eposta");
         DB=new dataBase(this);
         TakvimSpinnerAdaptor takvimSpinnerAdaptor=new TakvimSpinnerAdaptor(getApplicationContext(),30);
-        //String stringTarih=takvimSpinnerAdaptor.getSelectedDateAsString(spnTarih);
         String rEvcil=spnEvcilHayvan.getSelectedItem().toString();
         String rBolum=spnBolum.getSelectedItem().toString();
         String rHekim=spnHekim.getSelectedItem().toString();
@@ -361,14 +245,15 @@ public class RandevuActivity extends AppCompatActivity {
         if(checkRandevu==false){
             Boolean insertDataRandevu=DB.insertDataRandevu(eposta,rEvcil,rBolum,rHekim,rTarih);
             if(insertDataRandevu==true){
-
-                Toast.makeText(getApplicationContext(),"Randevunuz başarıyla alınmıştır. Kısa mesaj ile bilgilendirileceksiniz",Toast.LENGTH_SHORT).show();
+                KayitOl.ToastUtils.showCustomToast("Randevunuz başarıyla alınmıştır.",0,getApplicationContext());
 
             }else {
-                Toast.makeText(getApplicationContext(), "Kayıt başarısız", Toast.LENGTH_SHORT).show();
+                KayitOl.ToastUtils.showCustomToast("Kayıt başarısız",0,getApplicationContext());
+
             }
         }else {
-            Toast.makeText(getApplicationContext(),"Aynı gün içerisinde aynı bölüme randevu alamazsınız. Başka bir gün deneyin",Toast.LENGTH_SHORT).show();
+            KayitOl.ToastUtils.showCustomToast("Aynı gün içerisinde aynı bölüme randevu alamazsınız. Başka bir gün için deneyin",0,getApplicationContext());
+            //Toast.makeText(getApplicationContext(),"Aynı gün içerisinde aynı bölüme randevu alamazsınız. Başka bir gün deneyin",Toast.LENGTH_SHORT).show();
 
         }
 

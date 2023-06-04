@@ -1,15 +1,15 @@
 package com.example.veterinerrandevu;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ public class HekimActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     TextView hekimAd;
     ArrayList<String> animalName;
-   // ArrayList<String> sahipName;
+    ArrayList<String> sahipName;
     ArrayList<String> tarih;
     MyAdapterDoctor myAdapterDoctor;
 
@@ -39,9 +39,9 @@ public class HekimActivity extends AppCompatActivity {
 
         animalName=new ArrayList<>();
         tarih=new ArrayList<>();
-        //sahipName=new ArrayList<>();
+        sahipName=new ArrayList<>();
         recyclerView=findViewById(R.id.hekimRV);
-        myAdapterDoctor=new MyAdapterDoctor(this,animalName,tarih);
+        myAdapterDoctor=new MyAdapterDoctor(this,animalName,tarih,sahipName);
         recyclerView.setAdapter(myAdapterDoctor);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         veriyiGoster();
@@ -49,11 +49,7 @@ public class HekimActivity extends AppCompatActivity {
     }
 
     private void veriyiGoster(){
-       /* String getUsernameforHekim=DB.getUsernameforHekim(String.valueOf(animalName));
-        String usernameForHekim=getUsernameforHekim.toString();
 
-        String getNameforHekim=DB.getNameforHekim(usernameForHekim);
-        String nameForHekim=getNameforHekim.toString();*/
 
         String nameDataDoctor=getIntent().getStringExtra("nameDoctor");
         Cursor cursor=DB.getRandevuforHekim(nameDataDoctor);
@@ -62,6 +58,9 @@ public class HekimActivity extends AppCompatActivity {
             return;
         }else {
             while (cursor.moveToNext()){
+                String username=cursor.getString(0);
+                String sahipNameDB=DB.getHastaName(String.valueOf(username));
+                sahipName.add(sahipNameDB);
                 animalName.add(cursor.getString(1));
                 tarih.add(cursor.getString(4));
 

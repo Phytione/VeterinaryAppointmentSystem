@@ -10,9 +10,13 @@
 
     <TextView
         android:id="@+id/textView10"
+        android:text="deneme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:paddingStart="16dp" />
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:textAlignment="center"
+        />
 
 </LinearLayout>

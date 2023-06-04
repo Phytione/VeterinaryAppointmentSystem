@@ -1,11 +1,7 @@
 package com.example.veterinerrandevu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
@@ -13,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     EditText edtEposta;
@@ -88,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         String user=edtEposta.getText().toString();
         String pass=edtSifre.getText().toString();
         if(TextUtils.isEmpty(user)||TextUtils.isEmpty(pass)){
-            Toast.makeText(MainActivity.this,"Tüm alanların doldurulması gerekir",Toast.LENGTH_SHORT).show();
+            KayitOl.ToastUtils.showCustomToast("Tüm alanların doldurulması gerekir",0,MainActivity.this);
         }
         else{
             try {
@@ -112,15 +110,16 @@ public class MainActivity extends AppCompatActivity {
 
 
                     } else {
-                        Toast.makeText(MainActivity.this, "Kullanıcı adınız veya şifreniz yanlış,kontrol ediniz", Toast.LENGTH_SHORT).show();
+                        KayitOl.ToastUtils.showCustomToast("Kullanıcı adınız veya şifreniz yanlış, kontrol ediniz",0,MainActivity.this);
                     }
 
                 }else{
-                    Toast.makeText(this, "Geçerli bir e-mail adresi girin", Toast.LENGTH_SHORT).show();
+                    KayitOl.ToastUtils.showCustomToast("Geçerli bir e-mail adresi girin",0,this);
+
                 }
 
             } catch (Exception e) {
-                Toast.makeText(MainActivity.this,"Beklenmeyen bir sorun oluştu.Tekrar deneyiniz",Toast.LENGTH_SHORT).show();
+                KayitOl.ToastUtils.showCustomToast("Beklenmeyen bir sorun oluştu.Tekrar deneyiniz",0,MainActivity.this);
                 System.out.println(e);
             }
         }
@@ -135,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             //Toast.makeText(this, "Email Verified !", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Geçerli bir e-mail adresi girin", Toast.LENGTH_SHORT).show();
+
             return false;
         }
 

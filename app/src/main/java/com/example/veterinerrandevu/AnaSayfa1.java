@@ -1,22 +1,16 @@
 package com.example.veterinerrandevu;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -112,7 +106,7 @@ public class AnaSayfa1 extends AppCompatActivity {
         String eposta=getIntent().getStringExtra("eposta");
         Cursor cursor=DB.getRandevuData(eposta);
         if (cursor.getCount()==0){
-            Toast.makeText(getApplicationContext(),"Henüz hiç randevu almadınız",Toast.LENGTH_SHORT).show();
+            KayitOl.ToastUtils.showCustomToast("Henüz hiç randevu almadınız",0,getApplicationContext());
             return;
         }else {
             while (cursor.moveToNext()){
